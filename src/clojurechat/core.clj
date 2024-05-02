@@ -119,7 +119,7 @@
   (future 
     (loop []
       (when (try
-              (.write out (.getBytes "PING faggot\n")) ;; Тут DataOutputStream потому что только он ерорится
+              (.write out (.getBytes "PING something\n")) ;; Тут DataOutputStream потому что только он ерорится
               (Thread/sleep 600000)
               true
               (catch Exception e
@@ -184,4 +184,4 @@
             (if realized? pong) nil (recur)))))))
 
 (defn -main [& args]
-  (message-handler 7071))
+  (message-handler 6667))
